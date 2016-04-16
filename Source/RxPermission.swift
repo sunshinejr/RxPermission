@@ -24,7 +24,7 @@ public extension Permission {
         return rx_permissionInstance.asObservable()
     }
     
-    var rx_permissionInstance: PublishSubject<PermissionStatus> {
+    private var rx_permissionInstance: PublishSubject<PermissionStatus> {
         get {
             var permission: PublishSubject<PermissionStatus>!
             doLocked {
