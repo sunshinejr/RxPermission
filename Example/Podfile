@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'RxPermission_Example', :exclusive => true do
+  pod 'RxPermission', :path => '../'
+end
+
+target 'RxPermission_Tests', :exclusive => true do
+  pod 'RxPermission', :path => '../'
+
+  
+end
