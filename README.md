@@ -34,16 +34,16 @@ Permission
 ### Available permissions:
 ```swift
 case .Contacts
-case .LocationAlways:    
-case .LocationWhenInUse:
-case .Notifications:     
-case .Microphone:        
-case .Camera:            
-case .Photos:            
-case .Reminders:         
-case .Events:            
-case .Bluetooth:         
-case .Motion:
+case .LocationAlways  
+case .LocationWhenInUse
+case .Notifications  
+case .Microphone      
+case .Camera         
+case .Photos
+case .Reminders
+case .Events          
+case .Bluetooth
+case .Motion
 ```
 
 ### Available statuses:
