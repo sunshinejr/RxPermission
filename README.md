@@ -18,6 +18,46 @@ pod "RxPermission"
 
 ## Usage
 
+RxPermission makes a `rx_permission` Observable that you can subscribe in order to receive signals.
+
+### Sample code
+```swift
+Permission
+    .Contacts
+    .rx_permission
+    .subscribeNext { status in
+        print("Status: \(status)")
+    }
+    .addDisposableTo(disposeBag)
+```
+
+### Available permissions:
+```swift
+case .Contacts
+case .LocationAlways:    
+case .LocationWhenInUse:
+case .Notifications:     
+case .Microphone:        
+case .Camera:            
+case .Photos:            
+case .Reminders:         
+case .Events:            
+case .Bluetooth:         
+case .Motion:
+```
+
+### Available statuses:
+```swift
+case Authorized
+case Denied
+case Disabled
+case NotDetermined
+```
+
+For more info about permissions and statuses, please visit [Permission's README](https://github.com/delba/Permission#permission).
+
+## Example
+
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
 
 ## Author
