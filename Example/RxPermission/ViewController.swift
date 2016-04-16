@@ -2,23 +2,30 @@
 //  ViewController.swift
 //  RxPermission
 //
-//  Created by Łukasz Mróz on 04/16/2016.
-//  Copyright (c) 2016 Łukasz Mróz. All rights reserved.
+//  Created by Sunshinejr on 04/16/2016.
+//  Copyright (c) 2016 Sunshinejr. All rights reserved.
 //
 
 import UIKit
+import Permission
+import RxPermission
+import RxSwift
 
 class ViewController: UIViewController {
 
+    let disposeBag = DisposeBag()
+    @IBOutlet weak var label: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        Permission
+            .LocationAlways
+            .rx_permission
+            .subscribeNext { status in
+                self.label.text = "Status: \(status)"
+            }
+            .addDisposableTo(disposeBag)
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
 }
 

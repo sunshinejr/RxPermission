@@ -1,0 +1,20 @@
+PODS:
+  - Permission (1.2)
+  - RxPermission (0.1.0):
+    - Permission (~> 1.2)
+    - RxSwift (~> 2.4)
+  - RxSwift (2.4)
+
+DEPENDENCIES:
+  - RxPermission (from `../`)
+
+EXTERNAL SOURCES:
+  RxPermission:
+    :path: ../
+
+SPEC CHECKSUMS:
+  Permission: 690011e4d88f1afe47fad8207ec7d006b9eb8d0c
+  RxPermission: 8eb6468fff0a933fd02111f9a9f71c2917d3d703
+  RxSwift: 67b9ef4e8b34fb394e200e754c6a09cc16559f94
+
+COCOAPODS: 0.39.0
