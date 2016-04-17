@@ -26,20 +26,23 @@ import RxSwift
 
 public extension Permission {
     
-    private struct AssociatedKeys {
+    public var rx_permission: Observable<PermissionStatus> {
+        return rx_permissionInstance.asObservable()
+    }
+    
+}
+
+private extension Permission  {
+    struct AssociatedKeys {
         static var Permission = "rx_permissionInstance"
     }
     
-    private func doLocked(closure: () -> Void) {
+    func doLocked(closure: () -> Void) {
         objc_sync_enter(self); defer { objc_sync_exit(self) }
         closure()
     }
 
-    var rx_permission: Observable<PermissionStatus> {
-        return rx_permissionInstance.asObservable()
-    }
-    
-    private var rx_permissionInstance: PublishSubject<PermissionStatus> {
+    var rx_permissionInstance: PublishSubject<PermissionStatus> {
         get {
             var permission: PublishSubject<PermissionStatus>!
             doLocked {
@@ -62,5 +65,4 @@ public extension Permission {
             }
         }
     }
-    
 }
