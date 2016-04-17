@@ -33,25 +33,29 @@ Permission
 
 ### Available permissions:
 ```swift
-case .Contacts
-case .LocationAlways  
-case .LocationWhenInUse
-case .Notifications  
-case .Microphone      
-case .Camera         
-case .Photos
-case .Reminders
-case .Events          
-case .Bluetooth
-case .Motion
+public enum PermissionType {
+    case Contacts
+    case LocationAlways
+    case LocationWhenInUse
+    case Notifications
+    case Microphone
+    case Camera
+    case Photos
+    case Reminders
+    case Events
+    case Bluetooth
+    case Motion
+}
 ```
 
 ### Available statuses:
 ```swift
-case Authorized
-case Denied
-case Disabled
-case NotDetermined
+public enum PermissionStatus {
+    case Authorized
+    case Denied
+    case Disabled
+    case NotDetermined
+}
 ```
 
 For more info about permissions and statuses, please visit [Permission's README](https://github.com/delba/Permission#permission).
