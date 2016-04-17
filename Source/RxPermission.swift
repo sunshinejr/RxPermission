@@ -25,11 +25,10 @@ import Permission
 import RxSwift
 
 public extension Permission {
-    
+    /// Reactive wrapper for `Permission` instance.
     public var rx_permission: Observable<PermissionStatus> {
         return rx_permissionInstance.asObservable()
     }
-    
 }
 
 private extension Permission  {
