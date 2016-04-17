@@ -31,37 +31,55 @@ public extension Permission {
     }
 }
 
-private extension Permission  {
-    struct AssociatedKeys {
-        static var Permission = "rx_permissionInstance"
-    }
-    
-    func doLocked(closure: () -> Void) {
-        objc_sync_enter(self); defer { objc_sync_exit(self) }
-        closure()
-    }
+// MARK: - Permission
 
-    var rx_permissionInstance: PublishSubject<PermissionStatus> {
+extension Permission: AssociatedObject {
+    private var rx_permissionInstance: PublishSubject<PermissionStatus> {
         get {
             var permission: PublishSubject<PermissionStatus>!
+            
             doLocked {
-                if let lookup = objc_getAssociatedObject(self, &AssociatedKeys.Permission) as? PublishSubject<PermissionStatus> {
+                if let lookup = self.associatedObject(&.permission) as? PublishSubject<PermissionStatus> {
                     permission = lookup
                 } else {
                     permission = PublishSubject<PermissionStatus>()
-                    self.request { status in
-                        permission.onNext(status)
-                    }
+                    self.request { permission.onNext($0) }
                     self.rx_permissionInstance = permission
                 }
             }
+            
             return permission
         }
         
         set {
             doLocked {
-                objc_setAssociatedObject(self, &AssociatedKeys.Permission, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+                self.associatedObject(&.permission, object: newValue)
             }
         }
     }
+    
+    private func doLocked(closure: () -> Void) {
+        objc_sync_enter(self); defer { objc_sync_exit(self) }
+        closure()
+    }
+}
+
+// MARK: - AssociatedObject
+
+private protocol AssociatedObject {}
+
+private extension AssociatedObject where Self: AnyObject {
+    func associatedObject(inout key: String) -> AnyObject! {
+        return objc_getAssociatedObject(self, &key)
+    }
+    
+    func associatedObject(inout key: String, object: AnyObject) {
+        objc_setAssociatedObject(self, &key, object, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+    }
+}
+
+// MARK: - String
+
+private extension String {
+    static var permission = "rx_permissionInstance"
 }
