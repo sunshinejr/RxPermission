@@ -43,8 +43,7 @@ public extension Permission {
         get {
             var permission: PublishSubject<PermissionStatus>!
             doLocked {
-                let lookup = objc_getAssociatedObject(self, &AssociatedKeys.Permission) as? PublishSubject<PermissionStatus>
-                if let lookup = lookup {
+                if let lookup = objc_getAssociatedObject(self, &AssociatedKeys.Permission) as? PublishSubject<PermissionStatus> {
                     permission = lookup
                 } else {
                     permission = PublishSubject<PermissionStatus>()
