@@ -1,4 +1,5 @@
 # Next
+- Add support for Carthage
 
 # 0.1.2
 - Code style fixes
