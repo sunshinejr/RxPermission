@@ -7,15 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		46AE7ED21D1081FC0004DB02 /* RxPermission.h in Headers */ = {isa = PBXBuildFile; fileRef = 46AE7ECF1D1081FC0004DB02 /* RxPermission.h */; };
 		46AE7ED31D1081FC0004DB02 /* RxPermission.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46AE7ED01D1081FC0004DB02 /* RxPermission.swift */; };
+		46AE7ED51D10862C0004DB02 /* Permission.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46AE7ED41D10862C0004DB02 /* Permission.framework */; };
+		46AE7ED71D1089E90004DB02 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46AE7ED61D1089E90004DB02 /* RxSwift.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		46AE7EC21D1081C90004DB02 /* RxPermission.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RxPermission.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		46AE7ECE1D1081FC0004DB02 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		46AE7ECF1D1081FC0004DB02 /* RxPermission.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RxPermission.h; sourceTree = "<group>"; };
 		46AE7ED01D1081FC0004DB02 /* RxPermission.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxPermission.swift; sourceTree = "<group>"; };
+		46AE7ED41D10862C0004DB02 /* Permission.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Permission.framework; path = Carthage/Build/iOS/Permission.framework; sourceTree = "<group>"; };
+		46AE7ED61D1089E90004DB02 /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -23,6 +25,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				46AE7ED71D1089E90004DB02 /* RxSwift.framework in Frameworks */,
+				46AE7ED51D10862C0004DB02 /* Permission.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -33,6 +37,8 @@
 			isa = PBXGroup;
 			children = (
 				46AE7ECD1D1081FC0004DB02 /* Source */,
+				46AE7ED41D10862C0004DB02 /* Permission.framework */,
+				46AE7ED61D1089E90004DB02 /* RxSwift.framework */,
 				46AE7EC31D1081C90004DB02 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -48,9 +54,8 @@
 		46AE7ECD1D1081FC0004DB02 /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				46AE7ECE1D1081FC0004DB02 /* Info.plist */,
-				46AE7ECF1D1081FC0004DB02 /* RxPermission.h */,
 				46AE7ED01D1081FC0004DB02 /* RxPermission.swift */,
+				46AE7ECE1D1081FC0004DB02 /* Info.plist */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -62,7 +67,6 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				46AE7ED21D1081FC0004DB02 /* RxPermission.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -238,6 +242,10 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = Source/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -254,6 +262,10 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = Source/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
