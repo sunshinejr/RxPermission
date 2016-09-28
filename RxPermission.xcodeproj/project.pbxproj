@@ -102,6 +102,7 @@
 				TargetAttributes = {
 					46AE7EC11D1081C90004DB02 = {
 						CreatedOnToolsVersion = 7.3.1;
+						LastSwiftMigration = 0800;
 					};
 				};
 			};
@@ -252,6 +253,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = sunshinejr.RxPermission;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -272,6 +274,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = sunshinejr.RxPermission;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};

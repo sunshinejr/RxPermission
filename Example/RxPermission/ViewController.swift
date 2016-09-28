@@ -20,11 +20,11 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         Permission
-            .LocationAlways
+            .locationAlways
             .rx_permission
-            .subscribeNext { status in
+          .subscribe(onNext: { status in
                 self.label.text = "Status: \(status)"
-            }
+            })
             .addDisposableTo(disposeBag)
     }
 }
