@@ -1,5 +1,7 @@
 use_frameworks!
 
-target 'RxPermission_Example', :exclusive => true do
+target 'RxPermission_Example' do
   pod 'RxPermission', :path => '../'
+  pod 'Permission', :git => 'https://github.com/delba/Permission', :branch => 'swift-3.0'
+  pod 'RxSwift', :git => 'https://github.com/ReactiveX/RxSwift'
 end
