@@ -1,5 +1,8 @@
 # Next
 
+# 1.0.0-beta.1
+- Support for Swift 3.0
+
 # 0.2
 - Changes codebase from Subjects to Observables.
 - Add support for Carthage.
