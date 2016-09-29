@@ -21,8 +21,8 @@ class ViewController: UIViewController {
         
         Permission
             .locationAlways
-            .rx_permission
-          .subscribe(onNext: { status in
+            .rx.permission
+            .subscribe(onNext: { status in
                 self.label.text = "Status: \(status)"
             })
             .addDisposableTo(disposeBag)

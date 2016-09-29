@@ -24,12 +24,12 @@
 import Permission
 import RxSwift
 
-public extension Permission {
-
+extension Reactive where Base: Permission {
+    
     /// Reactive wrapper for `Permission` instance.
-    public var rx_permission: Observable<PermissionStatus> {
+    public var permission: Observable<PermissionStatus> {
         return Observable.create { (observer) in
-            self.request { observer.onNext($0) }
+            self.base.request { observer.onNext($0) }
             return AnonymousDisposable { observer.onCompleted() }
         }
     }
