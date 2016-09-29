@@ -1,6 +1,6 @@
 PODS:
   - Permission (1.5)
-  - RxPermission (0.2):
+  - RxPermission (1.0.0-beta.1):
     - Permission
     - RxSwift
   - RxSwift (3.0.0-beta.1)
@@ -15,7 +15,7 @@ EXTERNAL SOURCES:
     :branch: swift-3.0
     :git: https://github.com/delba/Permission
   RxPermission:
-    :path: "../"
+    :path: ../
   RxSwift:
     :git: https://github.com/ReactiveX/RxSwift
 
@@ -29,9 +29,9 @@ CHECKOUT OPTIONS:
 
 SPEC CHECKSUMS:
   Permission: 2d9647f8b994a5faf7e1c5a40d4328fde158c2f2
-  RxPermission: ae4eb417194477024fe08443c99ce90dbcba9707
+  RxPermission: 60c2b2f0e8dfbbef74232b4f824f99b33d8cbccd
   RxSwift: 0823e8d7969c23bfa9ddfb2afa4881e424a1a710
 
-PODFILE CHECKSUM: 4b41159dbcdf90412fd7d5e568ebb98713a1704b
+PODFILE CHECKSUM: 8ebf23ccfac9b28506cb118f8da61cee08612973
 
-COCOAPODS: 1.1.0.rc.2
+COCOAPODS: 1.0.1

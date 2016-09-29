@@ -5,3 +5,15 @@ target 'RxPermission_Example' do
   pod 'Permission', :git => 'https://github.com/delba/Permission', :branch => 'swift-3.0'
   pod 'RxSwift', :git => 'https://github.com/ReactiveX/RxSwift'
 end
+
+# Hack to fix testability until cocoapods gets an update
+post_install do |installer|
+    installer.pods_project.targets.each do |target|
+        target.build_configurations.each do |config|
+            if config.name == 'Debug'
+                config.build_settings['ENABLE_TESTABILITY'] = 'YES'
+                config.build_settings['SWIFT_VERSION'] = '3.0'
+            end
+        end
+    end
+end
