@@ -20,7 +20,7 @@ If you want to use RxPermission with Swift 3.0, as of now you have to use these 
 in your Podfile to have it working (while waiting for the official release of Permission and RxSwift):
 
 ```ruby
-pod 'RxPermission', '1.0.0-beta.1'
+pod 'RxPermission', '1.0.0-beta.2'
 pod 'Permission', :git => 'https://github.com/delba/Permission', :branch => 'swift-3.0'
 pod 'RxSwift', :git => 'https://github.com/ReactiveX/RxSwift'
 ```
@@ -41,7 +41,7 @@ RxPermission makes a `rx_permission` Observable that you can subscribe in order 
 ```swift
 Permission
     .Contacts
-    .rx_permission
+    .rx.permission
     .subscribeNext { status in
         print("Status: \(status)")
     }
@@ -51,27 +51,27 @@ Permission
 ### Available permissions:
 ```swift
 public enum PermissionType {
-    case Contacts
-    case LocationAlways
-    case LocationWhenInUse
-    case Notifications
-    case Microphone
-    case Camera
-    case Photos
-    case Reminders
-    case Events
-    case Bluetooth
-    case Motion
+    case contacts
+    case locationAlways
+    case locationWhenInUse
+    case notifications
+    case microphone
+    case camera
+    case photos
+    case reminders
+    case events
+    case bluetooth
+    case motion
 }
 ```
 
 ### Available statuses:
 ```swift
 public enum PermissionStatus {
-    case Authorized
-    case Denied
-    case Disabled
-    case NotDetermined
+    case authorized
+    case denied
+    case disabled
+    case notDetermined
 }
 ```
 

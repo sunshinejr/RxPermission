@@ -1,5 +1,8 @@
 # Next
 
+# 1.0.0-beta.2
+- Change `rx_permission` to `rx.permission` to follow RxSwift guidelines.
+
 # 1.0.0-beta.1
 - Support for Swift 3.0
 
