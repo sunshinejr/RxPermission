@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = "RxPermission"
-  s.version          = "1.0.0-beta.1"
+  s.version          = "1.0.0-beta.2"
   s.summary          = "RxSwift bindings for Permissions API in iOS."
   s.description      = <<-EOS
   RxSwift binding for [Permission](https://github.com/delba/Permission) API that helps you with Permissions in iOS.
