@@ -23,14 +23,15 @@
 
 import Permission
 import RxSwift
+import RxCocoa
 
-extension RxSwift.Reactive where Base: Permission {
+extension RxCocoa.Reactive where Base: Permission {
     
     /// Reactive wrapper for `Permission` instance.
     public var permission: Observable<PermissionStatus> {
         return Observable.create { (observer) in
             self.base.request { observer.onNext($0) }
-            return AnonymousDisposable { observer.onCompleted() }
+            return Disposables.create { observer.onCompleted() }
         }
     }
 }
