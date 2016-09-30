@@ -1,2 +1,2 @@
-github "delba/Permission" "v1.5"
-github "ReactiveX/RxSwift" "2.5.0"
+github "delba/Permission" "118772cc410e53acc9ec156d309448cf5861c329"
+github "ReactiveX/RxSwift" "3.0.0-beta.1"
