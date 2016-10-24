@@ -25,7 +25,7 @@ import Permission
 import RxSwift
 import RxCocoa
 
-extension RxCocoa.Reactive where Base: Permission {
+extension Reactive where Base: Permission {
     
     /// Reactive wrapper for `Permission` instance.
     public var permission: Observable<PermissionStatus> {
