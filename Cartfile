@@ -1,2 +1,2 @@
-github "delba/Permission" "swift-3.0"
+github "delba/Permission" "master"
 github "ReactiveX/RxSwift" ~> 3.0
