@@ -23,7 +23,6 @@
 
 import Permission
 import RxSwift
-import RxCocoa
 
 extension Reactive where Base: Permission {
     
