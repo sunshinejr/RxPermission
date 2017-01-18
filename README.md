@@ -9,20 +9,37 @@
 
 ## Installation
 
-RxPermission is available through [CocoaPods](http://cocoapods.org). I can't guarantee it is working correctly
-on Carthage, so if you want to help I'm happy to introduce it with your PR.
+RxPermission is available through [CocoaPods](http://cocoapods.org). I can't
+guarantee it is working correctly on Carthage, so if you want to help I'm happy
+to introduce it with your PR.
 
-RxPermission should work with every Swift release >= 2.2, for detailed instructions check
-info below.
+RxPermission should work with every Swift release >= 2.2, for detailed
+instructions check info below.
 
 ## Swift 3.0
-If you want to use RxPermission with Swift 3.0, as of now you have to use these lines below
-in your Podfile to have it working (while waiting for the official release of Permission and RxSwift):
+If you want to use RxPermission with Swift 3.0 you have to specify which
+Permission you want to install/use because of new Apple policy about permission.
+For example if you want to access the Camera and the Notifications you define the following:
+```
+pod 'RxPermission/Camera'
+pod 'RxPermission/Notifications'
+```
 
-```ruby
-pod 'RxPermission', '1.0.0-beta.2'
-pod 'Permission', :git => 'https://github.com/delba/Permission', :branch => 'swift-3.0'
-pod 'RxSwift', :git => 'https://github.com/ReactiveX/RxSwift'
+Available specs:
+```
+pod 'RxPermission/AddressBook'
+pod 'RxPermission/Bluetooth'
+pod 'RxPermission/Camera'
+pod 'RxPermission/Contacts'
+pod 'RxPermission/Events'
+pod 'RxPermission/Location'
+pod 'RxPermission/Microphone'
+pod 'RxPermission/Motion'
+pod 'RxPermission/Notifications'
+pod 'RxPermission/Photos'
+pod 'RxPermission/Reminders'
+pod 'RxPermission/SpeechRecognizer'
+pod 'RxPermission/MediaLibrary'
 ```
 
 ## Below Swift 3.0
@@ -32,6 +49,9 @@ To install it, simply add the following line to your Podfile:
 ```ruby
 pod "RxPermission", "~> 0.2"
 ```
+
+You need to also take care of Info.plist messages because otherwise Apple won't
+accept the app in App Store.
 
 ## Usage
 
@@ -51,17 +71,20 @@ Permission
 ### Available permissions:
 ```swift
 public enum PermissionType {
+    case addressBook
+    case bluetooth
+    case camera    
     case contacts
-    case locationAlways
-    case locationWhenInUse
-    case notifications
+    case events
+    case motion
     case microphone
-    case camera
+    case notifications
     case photos
     case reminders
-    case events
-    case bluetooth
-    case motion
+    case locationAlways
+    case locationWhenInUse
+    case mediaLibrary
+    case speechRecognizer
 }
 ```
 
