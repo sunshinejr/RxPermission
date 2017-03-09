@@ -64,7 +64,7 @@ Permission
     .rx.permission
     .subscribe(onNext: { status in
         print("Status: \(status)")
-    }
+    })
     .addDisposableTo(disposeBag)
 ```
 
