@@ -60,7 +60,7 @@ RxPermission makes a `rx_permission` Observable that you can subscribe in order 
 ### Sample code
 ```swift
 Permission
-    .Contacts
+    .contacts
     .rx.permission
     .subscribeNext { status in
         print("Status: \(status)")
