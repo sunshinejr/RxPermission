@@ -62,7 +62,7 @@ RxPermission makes a `rx_permission` Observable that you can subscribe in order 
 Permission
     .contacts
     .rx.permission
-    .subscribeNext { status in
+    .subscribe(onNext: { status in
         print("Status: \(status)")
     }
     .addDisposableTo(disposeBag)
