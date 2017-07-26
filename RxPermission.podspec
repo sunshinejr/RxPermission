@@ -49,6 +49,11 @@ Pod::Spec.new do |s|
     ss.dependency 'Permission/Location'
   end
 
+  s.subspec 'MediaLibrary' do |ss|
+    ss.dependency 'RxPermission/Core'
+    ss.dependency 'Permission/MediaLibrary'
+  end
+
   s.subspec 'Microphone' do |ss|
     ss.dependency 'RxPermission/Core'
     ss.dependency 'Permission/Microphone'
@@ -74,13 +79,13 @@ Pod::Spec.new do |s|
     ss.dependency 'Permission/Reminders'
   end
 
+  s.subspec 'Siri' do |ss|
+   ss.dependency 'RxPermission/Core'
+   ss.dependency 'Permission/Siri'
+  end
+
   s.subspec 'SpeechRecognizer' do |ss|
     ss.dependency 'RxPermission/Core'
     ss.dependency 'Permission/SpeechRecognizer'
-  end
-
-  s.subspec 'MediaLibrary' do |ss|
-    ss.dependency 'RxPermission/Core'
-    ss.dependency 'Permission/MediaLibrary'
   end
 end
