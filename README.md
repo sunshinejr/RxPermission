@@ -33,13 +33,14 @@ pod 'RxPermission/Camera'
 pod 'RxPermission/Contacts'
 pod 'RxPermission/Events'
 pod 'RxPermission/Location'
+pod 'RxPermission/MediaLibrary'
 pod 'RxPermission/Microphone'
 pod 'RxPermission/Motion'
 pod 'RxPermission/Notifications'
 pod 'RxPermission/Photos'
 pod 'RxPermission/Reminders'
+pod 'RxPermission/Siri'
 pod 'RxPermission/SpeechRecognizer'
-pod 'RxPermission/MediaLibrary'
 ```
 
 ## Below Swift 3.0
@@ -76,14 +77,15 @@ public enum PermissionType {
     case camera    
     case contacts
     case events
-    case motion
-    case microphone
-    case notifications
-    case photos
-    case reminders
     case locationAlways
     case locationWhenInUse
     case mediaLibrary
+    case microphone
+    case motion
+    case notifications
+    case photos
+    case reminders
+    case siri
     case speechRecognizer
 }
 ```
