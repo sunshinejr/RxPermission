@@ -56,7 +56,7 @@ accept the app in App Store.
 
 ## Usage
 
-RxPermission makes a `rx_permission` Observable that you can subscribe in order to receive signals.
+RxPermission makes a `rx.permission` Observable that you can subscribe in order to receive signals.
 
 ### Sample code
 ```swift
